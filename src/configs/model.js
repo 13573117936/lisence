@@ -5,7 +5,7 @@ export default [
   },
   {
     type: 'c2',
-    text: 'C1驾照'
+    text: 'C2驾照'
   },
   {
     type: 'a1',

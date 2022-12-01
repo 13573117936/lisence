@@ -19,6 +19,7 @@ const store = useStore(), state = store.state
 let subjectId = computed(() => {
   return state.subjectId
 })
+
 function setSubjectId(id) {
   store.commit('setSubjectId', id)
 }
