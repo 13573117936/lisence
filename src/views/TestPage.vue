@@ -2,11 +2,12 @@
   <div>
     <div class="container">
       <div class="img-inner">
-        <img :src="testres.result[0].url" />
+        <img v-if="testres.result[0].url" :src="testres.result[0].url" />
       </div>
       <div class="question">
         题目：{{ testres.result[0].question }}
       </div>
+      <div>{{ data }}</div>
       <div>
         <Option>
           A：{{ testres.result[0].item1 }}
@@ -28,16 +29,15 @@
   </div>
 </template>
 <script setup>
-import { onMounted, computed } from 'vue';
+import { onMounted, computed, watch } from 'vue';
 import getData from '@/services/index'
 import { useStore } from 'vuex'
 import Option from '@/components/Option'
-
+const store = useStore()
 onMounted(() => {
-  console.log(11)
   getData(store)
 })
-const store = useStore()
+
 let testres = {
   error_code: 0,
   reason: "ok",
@@ -55,7 +55,10 @@ let testres = {
     }
   ]
 }
-console.log(store.state.data)
+
+const data = computed(() => { return store.state.data })
+// console.log(question[num])
+console.log(data)
 // testres = computed(() => {
 //   return store.state.data
 // })

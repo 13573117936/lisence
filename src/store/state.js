@@ -5,5 +5,5 @@ export default {
   data: [], // 题目信息
   headerTitle: '驾照题库',
   answers: [],
-  number: 1
+  position: 0
 }

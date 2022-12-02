@@ -14,7 +14,7 @@
 import { useStore } from 'vuex';
 import { computed } from 'vue';
 const props = defineProps(['item'])
-console.log(props.item)
+// console.log(props.item)
 const store = useStore(), state = store.state
 let subjectId = computed(() => {
   return state.subjectId

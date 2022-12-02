@@ -7,12 +7,12 @@ export default async (store) => {
     modelType: modelType
   })
   if (data.error_code !== 0) {
+    console.log(data)
     store.commit('setErrorCode', data.error_code)
     return
   }
 
   const questionsData = data.result.slice(0, 5)
   store.commit('setData', questionsData)
-  // console.log(data)
   console.log(store.state.data)
 }
